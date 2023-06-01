@@ -12,7 +12,7 @@
 #  License for the specific language governing permissions and limitations
 #  under the License.
 
-
+import ENdictionary as en
 import os
 import sys
 from argparse import ArgumentParser
@@ -64,9 +64,10 @@ def callback():
             continue
         if not isinstance(event.message, TextMessage):
             continue
+        result = event.message.text
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=event.message.text)
+            TextSendMessage(text=result)
         )
     return 'OK'
 
