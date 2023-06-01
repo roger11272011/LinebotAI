@@ -67,6 +67,7 @@ def callback():
         message = []
         message.append( TextSendMessage( text = '回傳訊息' ) )
         message.append( TextSendMessage( text = '回傳訊息' ) )
+        line_bot_api.reply_message( event.reply_token, message )
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=event.message.text)
