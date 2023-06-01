@@ -11,12 +11,11 @@ def read(word):
         eng = data.find_all('div',class_='fz-16 fl-l dictionaryExplanation')
         ps = data.find_all('div',class_='pos_button fz-14 fl-l mr-12')
         kk = data.find('div',class_='compList d-ib')
-        a=[]
-        a.append('音標:'+kk.text)
+        a=('音標:'+kk.text+'\n')
 
         for j in range(len(ps)):
-            a.append('詞性:'+ps[j].text)
-            a.append('中文:'+eng[j].text)
+            a=a+('詞性:'+ps[j].text+'\n')
+            a=a+('中文:'+eng[j].text+'\n')
         return(a)
     except:
         return('查無此單字')
