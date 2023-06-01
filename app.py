@@ -64,11 +64,11 @@ def callback():
             continue
         if not isinstance(event.message, TextMessage):
             continue
-        message=[]
         result = en.read(event.message.text)
-        for i in range(len(result)):
-            message.append( TextSendMessage( text = result[i] ) )
-        line_bot_api.reply_message( event.reply_token, message )
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=result)
+)
         
     return 'OK'
 
