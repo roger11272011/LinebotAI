@@ -15,7 +15,7 @@ def read(word):
 
         for j in range(len(ps)):
             a=a+('詞性:'+ps[j].text+'\n')
-            a=a+('中文:'+eng[j].text+'\n)
+            a=a+('中文:'+eng[j].text+'\n')
         a=a+'詳細內容:'+url
         return(a)
     except:
