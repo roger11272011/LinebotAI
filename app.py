@@ -69,6 +69,8 @@ def callback():
             event.reply_token,
             TextSendMessage(text=result)
         )
+        line_bot_api.reply_message( event.reply_token, a )
+        
     return 'OK'
 
 
