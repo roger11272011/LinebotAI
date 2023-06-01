@@ -11,10 +11,11 @@ def read(word):
         eng = data.find_all('div',class_='fz-16 fl-l dictionaryExplanation')
         ps = data.find_all('div',class_='pos_button fz-14 fl-l mr-12')
         kk = data.find('div',class_='compList d-ib')
-        a=(word,'音標:',kk.text,'/n')
+        a=[]
+        a+=('音標:',kk.text)
+        
         for j in range(len(ps)):
             a+=('詞性:',ps[j].text)
             a+=('中文:',eng[j].text)
-        return(a)
     except:
-        return('查無此字')
+        print('查無此字')
